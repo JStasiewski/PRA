@@ -1,0 +1,6 @@
+tensorflowjs_converter \
+  --input_format=tf_saved_model \
+  --saved_model_tags=serve \
+  --output_format=tfjs_graph_model \
+  my_plant_model \
+  my_plant_model_tfjs

@@ -1,0 +1,69 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+package-lock.json
+yarn.lock
+
+# Build output
+dist/
+build/
+.expo/
+.expo-shared/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Expo and React Native files
+ios/
+android/
+web-build/
+.DS_Store
+
+# TFJS model binary files
+*.bin
+*.model.json
+
+# Python files and caches
+__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
+
+# Ignore temporary and system files
+*.swp
+*.tmp
+*.bak
+*.pid
+*.seed
+*.pid.lock
+*.sublime-workspace
+*.sublime-project
+
+# Git-specific files
+*.orig
+
+# Images and binaries
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Ignore scripts folder if you don't want to track it
+scripts/
+
+# Ignore anything specific to training dataset
+my_plant_model
+my_plant_model_tfjs
+split_ttv_dataset_type_of_plants/
