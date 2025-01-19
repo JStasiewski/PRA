@@ -8,6 +8,7 @@ import {
   View
 } from 'react-native';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
+import { useRouter } from 'expo-router'; // Import useRouter
 
 // TensorFlow.js for React Native:
 import * as tf from '@tensorflow/tfjs';
@@ -20,11 +21,11 @@ const modelWeights3 = require('../../assets/my_plant_model_tfjs/group1-shard3of3
 
 // Example class labels
 const classNames = [
-  'aloevera', 'banan', 'bilimbi', 'cantaloupe', 'cassava', 'coconut', 'corn',
+  'aloe', 'banan', 'averrhoa', 'cantaloupe', 'cassava', 'coconut', 'corn',
   'cucumber', 'curcuma', 'eggplant', 'galangal', 'ginger', 'guava', 'kale',
-  'longbeans', 'mango', 'melon', 'orange', 'paddy', 'papaya',
-  'peper chili', 'pineapple', 'pomelo', 'shallot', 'soybeans',
-  'spinach', 'sweet potatoes', 'tobacco', 'waterapple', 'watermelon'
+  'asparagus', 'mango', 'melon', 'orange', 'rice', 'papaya',
+  'pepper', 'pineapple', 'pomelo', 'shallot', 'soy bean',
+  'spinach', 'sweet potato', 'tobacco', 'syzygium', 'watermelon'
 ];
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
   // Track loading state and prediction result
   const [loading, setLoading] = useState(false);
   const [predictionText, setPredictionText] = useState<string>('');
+  const router = useRouter();
 
   // Load TensorFlow model once on startup
   useEffect(() => {
@@ -114,6 +116,8 @@ export default function App() {
 
       // 6) Save result to state
       setPredictionText(`${className} (${confidencePercent})`);
+      router.push({pathname: '/(tabs)/explore', params: {predictedClass: className, confidence: confidencePercent}})
+
     } catch (err) {
       console.error('Error taking photo or predicting:', err);
       setPredictionText('Prediction error');

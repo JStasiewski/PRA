@@ -40,7 +40,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # 3) Train
-model.fit(train_ds, validation_data=val_ds, epochs=10)
+model.fit(train_ds, validation_data=val_ds, epochs=80)
 
 # 4) Fine-tune
 # base_model.trainable = True
@@ -52,4 +52,4 @@ test_loss, test_accuracy = model.evaluate(test_ds)
 print("Test Accuracy:", test_accuracy)
 
 # 6) Save
-model.save("my_plant_model")
+model.save("my_plant_model_0.1")
