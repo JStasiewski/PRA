@@ -53,18 +53,12 @@ __pycache__/
 # Git-specific files
 *.orig
 
-# Images and binaries
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-
 # Ignore scripts folder if you don't want to track it
 scripts/
 
 # Ignore anything specific to training dataset
 my_plant_model
 my_plant_model_0.1
+my_plant_model_0.2
 my_plant_model_tfjs
 split_ttv_dataset_type_of_plants/
